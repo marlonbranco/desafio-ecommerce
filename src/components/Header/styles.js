@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   background: #202020;
-  padding: 30px 0;
+  padding: 10px 0;
 
   img {
-    width: 12%;
+    width: 10%;
     margin-left: 50px;
   }
   header {
@@ -20,7 +20,7 @@ export const Container = styled.div`
     h1 {
       color: #f5f5f5;
       text-decoration: none;
-      font-size: 5vw;
+      font-size: 4vw;
       transition: opacity 0.2s;
     }
     nav {

@@ -6,24 +6,44 @@ export const Container = styled.div`
   margin: 0px auto;
   padding: 40px 20px;
 `;
-
-// export const Select = styled.div`
-//   position: relative;
-//   max-width: 1120px;
-//   right: 0;
-// `;
-
+export const Select = styled.div`
+  position: relative;
+  max-width: 1120px;
+  margin-left: 90%;
+  float: right;
+  select {
+    font-family: "Play", sans-serif;
+    text-align: center;
+    padding: 10px;
+    justify-content: space-between;
+    color: #202020;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    border-style: none;
+    transition: 0.2s;
+    margin: 10px;
+    &:hover {
+      background-color: #e1e1e1;
+    }
+    & + option {
+      font-family: "Play";
+    }
+  }
+`;
 export const ProductsContainer = styled.li`
   display: inline-table;
   background-color: #fff;
   border-radius: 5px;
-  border: 2px #f5f5f5;
+  border: 2px blue;
   margin-top: 20px;
-  margin-left: 20px;
+  margin-left: 12px;
   margin-bottom: 30px;
   height: 350px;
   max-width: 250px;
 
+  &:hover {
+    border: 5px;
+  }
   img {
     border-radius: 5px;
     width: 90%;
@@ -33,7 +53,7 @@ export const ProductsContainer = styled.li`
 
   h4 {
     font-size: 14px;
-    margin: 13px;
+    margin: 16px;
     color: #202020;
   }
   p {
@@ -42,25 +62,35 @@ export const ProductsContainer = styled.li`
 
     margin-left: 20px;
   }
-  span {
-    p {
-      margin-top: 14px;
-      margin-bottom: 14px;
-      strong {
-        font-size: 28px;
-        color: #202020;
-      }
+  p {
+    margin-top: 14px;
+    margin-bottom: 14px;
+    strong {
+      font-size: 28px;
+      color: #202020;
     }
-    button {
-      position: relative;
-      right: 0;
-      height: 40px;
-      width: 40px;
-      img {
-        color: #202020;
-        width: 100%;
-        padding: 5px;
-      }
+  }
+  button {
+    text-align: center;
+    padding: 10px;
+    justify-content: space-between;
+    color: #e1e1e1;
+    background-color: #8d1ba5;
+    border-radius: 5px;
+    border: none;
+    transition: 0.2s;
+    margin: 10px;
+    img {
+      display: inline-block;
+      vertical-align: middle;
+      color: #f0f0f0;
+      width: 15%;
+      margin-left: 20px;
+      padding: 5px;
+    }
+
+    &:hover {
+      background-color: #b930d6;
     }
   }
 `;
