@@ -3,7 +3,13 @@ import { Route } from "react-router-dom";
 
 import addToCart from "../../assets/cart-icon.svg";
 import Header from "../../components/Header";
-import { Container, Title, ProductsContainer, Select } from "./styles";
+import {
+  Container,
+  Title,
+  ProductsContainer,
+  Select,
+  AnimationContainer,
+} from "./styles";
 
 import Products from "../../components/Products/Products";
 import Data from "../../products.json";
@@ -57,39 +63,41 @@ const Dashboard = () => {
     <>
       <Header />
       <Container>
-        <span>
-          <Title>Jogos</Title>
-          <Select className="custom-select">
-            <select onChange={(e) => setSortType(e.target.value)}>
-              <option value="">Filtrar por...</option>
-              <option value="price">Preço</option>
-              <option value="score">Popularidade</option>
-              <option value="name">Nome</option>
-            </select>
-          </Select>
-        </span>
-        <ul className="products">
-          {data.map((product) => (
-            <ProductsContainer key={product.id} className="product">
-              <Products product={product} />
-              <Route
-                render={({ history }) => (
-                  <button
-                    type="button"
-                    onClick={() => {
-                      history.push("/cart");
-                      console.log(items);
-                      return handleAddToCart(product);
-                    }}
-                  >
-                    Adicionar ao carrinho
-                    <img src={addToCart} alt="Adicionar ao carrinho" />
-                  </button>
-                )}
-              ></Route>
-            </ProductsContainer>
-          ))}
-        </ul>
+        <AnimationContainer>
+          <span>
+            <Title>Jogos</Title>
+            <Select className="custom-select">
+              <select onChange={(e) => setSortType(e.target.value)}>
+                <option value="">Filtrar por...</option>
+                <option value="price">Preço</option>
+                <option value="score">Popularidade</option>
+                <option value="name">Nome</option>
+              </select>
+            </Select>
+          </span>
+          <ul className="products">
+            {data.map((product) => (
+              <ProductsContainer key={product.id} className="product">
+                <Products product={product} />
+                <Route
+                  render={({ history }) => (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        history.push("/cart");
+                        console.log(items);
+                        return handleAddToCart(product);
+                      }}
+                    >
+                      Adicionar ao carrinho
+                      <img src={addToCart} alt="Adicionar ao carrinho" />
+                    </button>
+                  )}
+                ></Route>
+              </ProductsContainer>
+            ))}
+          </ul>
+        </AnimationContainer>
       </Container>
     </>
   );

@@ -10,13 +10,15 @@ export default createGlobalStyle`
 
   body {
     background: #121212;
-    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased !important;
   }
 
   body, input, button {
     font: 16px "Play", sans-serif;
   }
-
+  body html #root {
+    height: 100%;
+  }
   button {
     cursor: pointer;
   }

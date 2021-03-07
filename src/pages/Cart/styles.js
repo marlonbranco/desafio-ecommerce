@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const CartContainer = styled.div`
   width: 100%;
@@ -19,8 +19,28 @@ export const CartContainer = styled.div`
     }
   }
 `;
+const appearFromRight = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+`;
+
+export const AnimationContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  animation: ${appearFromRight} 1s;
+`;
+
 export const Title = styled.h1`
-  font-size: 35px;
+  font-size: 38px;
   font-weight: bold;
   color: #f0f0f0;
   margin-bottom: 30px;
@@ -33,26 +53,30 @@ export const ProductsContainer = styled.li`
   border: 2px blue;
   margin-bottom: 15px;
   max-width: 1140px;
-  img {
-    padding: 20px;
-    width: 20%;
-    min-width: 160px;
-  }
-  h3 {
-    font-size: 2vw;
-    margin-top: 30px;
-  }
 
+  span {
+    display: flex;
+    img {
+      padding: 20px;
+      width: 10%;
+      min-width: 160px;
+    }
+    h3 {
+      margin-top: 30px;
+      font-size: 20px;
+      padding-left: 50px;
+    }
+  }
   div {
     padding: 20px;
     margin-right: 20px;
     text-align: right;
     h4 {
-      font-size: 2vw;
+      font-size: 17px;
       margin-top: 5px;
     }
     h2 {
-      font-size: 3vw;
+      font-size: 25px;
       margin-top: 10px;
     }
     span {
@@ -77,6 +101,59 @@ export const ProductsContainer = styled.li`
 
       .remove {
         margin-left: 30px;
+      }
+    }
+  }
+  @media (max-width: 800px) {
+    flex-direction: column;
+
+    span {
+      display: flex;
+      img {
+        padding: 20px;
+        width: 10%;
+        min-width: 160px;
+      }
+      h3 {
+        font-size: 20px;
+        padding-left: 50px;
+      }
+    }
+    div {
+      padding: 20px;
+      margin-right: 20px;
+      text-align: right;
+      justify-content: space-between;
+      h4 {
+        font-size: 17px;
+        margin-top: 5px;
+      }
+      h2 {
+        font-size: 25px;
+        margin-top: 10px;
+      }
+      span {
+        display: flex;
+        padding-top: 20px;
+
+        h4 {
+          margin: 0px 5px;
+          font-size: 20px;
+        }
+        button {
+          border-radius: 50%;
+          border-style: none;
+          background-color: #fff;
+          transition: opacity 0.2s;
+
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+
+        .remove {
+          margin-left: 30px;
+        }
       }
     }
   }

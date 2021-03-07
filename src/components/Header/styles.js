@@ -16,16 +16,17 @@ export const Container = styled.div`
       display: inline-block;
       width: 60px;
       padding: 5px;
-      margin-left: 50px;
+      margin-left: 30px;
       img {
-        width: 150%;
+        width: 100%;
       }
     }
     h1 {
       color: #f5f5f5;
       text-decoration: none;
-      font-size: 4vw;
+      font-size: 5vw;
       transition: 0.8s;
+      margin-left: 20px;
     }
 
     nav {
