@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useCallback } from "react";
 import { Route } from "react-router-dom";
 
 import addToCart from "../../assets/cart-icon.svg";
@@ -37,9 +37,22 @@ const Dashboard = () => {
     sortProducts(sortType);
   }, [sortType]);
 
-  const handleAddToCart = (item) => {
-    setItems((prevItems) => [...prevItems, { item }]);
-  };
+  const handleAddToCart = useCallback(
+    (item) => {
+      const itemExists = items.find((i) => i.id === item.id);
+      if (itemExists) {
+        setItems(
+          items.map((i) =>
+            i.id === item.id ? { ...item, quantity: i.quantity + 1 } : i
+          )
+        );
+      } else {
+        setItems([...items, { ...item, quantity: 1 }]);
+      }
+    },
+    [items, setItems]
+  );
+
   return (
     <>
       <Header />
@@ -65,6 +78,7 @@ const Dashboard = () => {
                     type="button"
                     onClick={() => {
                       history.push("/cart");
+                      console.log(items);
                       return handleAddToCart(product);
                     }}
                   >

@@ -27,27 +27,32 @@ export const Title = styled.h1`
 `;
 export const ProductsContainer = styled.li`
   display: flex;
+  justify-content: space-between;
   background-color: #fff;
   border-radius: 5px;
   border: 2px blue;
   margin-bottom: 15px;
   max-width: 1140px;
-
   img {
     padding: 20px;
     width: 20%;
+    min-width: 160px;
   }
   h3 {
+    font-size: 2vw;
     margin-top: 30px;
   }
-  h4 {
-    margin-left: 70px;
-  }
+
   div {
-    float: right;
-    margin-left: 40%;
     padding: 20px;
+    margin-right: 20px;
+    text-align: right;
+    h4 {
+      font-size: 2vw;
+      margin-top: 5px;
+    }
     h2 {
+      font-size: 3vw;
       margin-top: 10px;
     }
     span {

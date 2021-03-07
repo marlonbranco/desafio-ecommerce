@@ -13,7 +13,7 @@ const Header = () => (
       </Link>
       <h1>AGameShop</h1>
       <nav>
-        <Link to="/">
+        <Link to="/cart">
           <FiShoppingCart size={35} />
         </Link>
       </nav>
