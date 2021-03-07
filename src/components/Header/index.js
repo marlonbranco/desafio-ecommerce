@@ -8,7 +8,9 @@ import Logo from "../../assets/controller.png";
 const Header = () => (
   <Container>
     <header>
-      <img src={Logo} alt="AGameShop" />
+      <Link to="/">
+        <img src={Logo} alt="AGameShop" />
+      </Link>
       <h1>AGameShop</h1>
       <nav>
         <Link to="/">

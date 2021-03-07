@@ -4,10 +4,6 @@ export const Container = styled.div`
   background: #202020;
   padding: 10px 0;
 
-  img {
-    width: 10%;
-    margin-left: 50px;
-  }
   header {
     width: 100%;
     max-width: 1120px;
@@ -16,13 +12,22 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    a {
+      display: inline-block;
+      width: 60px;
+      padding: 5px;
+      margin-left: 50px;
+      img {
+        width: 150%;
+      }
+    }
     h1 {
       color: #f5f5f5;
       text-decoration: none;
       font-size: 4vw;
-      transition: opacity 0.2s;
+      transition: 0.8s;
     }
+
     nav {
       margin-right: 50px;
       a {

@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { FiThumbsUp } from "react-icons/fi";
+import React, { useState, useEffect, useContext } from "react";
+import { Route } from "react-router-dom";
 
 import addToCart from "../../assets/cart-icon.svg";
-import formatValue from "../../utils/formatValue";
 import Header from "../../components/Header";
-import { Container, ProductsContainer, Select } from "./styles";
+import { Container, Title, ProductsContainer, Select } from "./styles";
 
+import Products from "../../components/Products/Products";
 import Data from "../../products.json";
+import { CartContext } from "../../hooks/cart";
 
 const Dashboard = () => {
   const [data, setData] = useState([]);
-  const [cart, setCart] = useState({});
   const [sortType, setSortType] = useState("name");
+  const [items, setItems] = useContext(CartContext);
 
   useEffect(() => {
     const sortProducts = (type) => {
@@ -31,47 +31,48 @@ const Dashboard = () => {
           return b[sortProperty] - a[sortProperty];
         }
       });
-      console.log(sorted);
       setData(sorted);
     };
 
     sortProducts(sortType);
   }, [sortType]);
 
-  const filterOptions = [
-    { value: "price", label: "Preço" },
-    { value: "score", label: "Popularidade" },
-    { value: "name", label: "Nome" },
-  ];
+  const handleAddToCart = (item) => {
+    setItems((prevItems) => [...prevItems, { item }]);
+  };
   return (
     <>
       <Header />
       <Container>
-        <Select className="custom-select">
-          <select onChange={(e) => setSortType(e.target.value)}>
-            <option value="">Filtrar por...</option>
-            <option value="price">Preço</option>
-            <option value="score">Popularidade</option>
-            <option value="name">Nome</option>
-          </select>
-        </Select>
+        <span>
+          <Title>Jogos</Title>
+          <Select className="custom-select">
+            <select onChange={(e) => setSortType(e.target.value)}>
+              <option value="">Filtrar por...</option>
+              <option value="price">Preço</option>
+              <option value="score">Popularidade</option>
+              <option value="name">Nome</option>
+            </select>
+          </Select>
+        </span>
         <ul className="products">
           {data.map((product) => (
             <ProductsContainer key={product.id} className="product">
-              <img src={`/assets/${product.image}`} alt={product.name} />
-              <h4>{product.name}</h4>
-              <p>
-                <FiThumbsUp size={17} />
-                {` ${product.score}`}
-              </p>
-
-              <p>
-                <strong>{formatValue(product.price)}</strong>
-              </p>
-              <button type="button">
-                Adicionar ao carrinho
-                <img src={addToCart} alt="Adicionar ao carrinho" />
-              </button>
+              <Products product={product} />
+              <Route
+                render={({ history }) => (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      history.push("/cart");
+                      return handleAddToCart(product);
+                    }}
+                  >
+                    Adicionar ao carrinho
+                    <img src={addToCart} alt="Adicionar ao carrinho" />
+                  </button>
+                )}
+              ></Route>
             </ProductsContainer>
           ))}
         </ul>

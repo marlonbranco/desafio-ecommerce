@@ -5,12 +5,23 @@ export const Container = styled.div`
   max-width: 1120px;
   margin: 0px auto;
   padding: 40px 20px;
+
+  span {
+    display: flex;
+    justify-content: space-between;
+  }
 `;
+
+export const Title = styled.h1`
+  font-size: 35px;
+  font-weight: bold;
+  color: #f0f0f0;
+  margin-bottom: 30px;
+  margin-left: 20px;
+`;
+
 export const Select = styled.div`
-  position: relative;
-  max-width: 1120px;
-  margin-left: 90%;
-  float: right;
+  margin-right: 1%;
   select {
     font-family: "Play", sans-serif;
     text-align: center;
@@ -30,6 +41,7 @@ export const Select = styled.div`
     }
   }
 `;
+
 export const ProductsContainer = styled.li`
   display: inline-table;
   background-color: #fff;
@@ -59,7 +71,6 @@ export const ProductsContainer = styled.li`
   p {
     font-size: 15px;
     color: #202020;
-
     margin-left: 20px;
   }
   p {
