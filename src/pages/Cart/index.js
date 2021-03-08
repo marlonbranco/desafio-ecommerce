@@ -57,7 +57,7 @@ const Cart = () => {
     }
   }, 0);
 
-  const total = cartSubTotal + shippingCost;
+  const finalPrice = cartSubTotal + shippingCost;
 
   return (
     <>
@@ -121,7 +121,7 @@ const Cart = () => {
               <hr className="line" />
               <span className="checkoutValues">
                 <h2>Total</h2>
-                <h2>{formatValue(total)}</h2>
+                <h2 data-testid="final-price">{formatValue(finalPrice)}</h2>
               </span>
             </CheckoutContainer>
             <CheckoutButton onClick={() => console.log(items)}>
