@@ -121,7 +121,7 @@ export const ProductsContainer = styled.li`
     flex-direction: column;
     position: relative;
     text-align: left;
-    max-width: 150px;
+    max-width: 140px;
     margin-bottom: 10px;
     margin-top: 10px;
     min-height: 290px;
@@ -142,14 +142,15 @@ export const ProductsContainer = styled.li`
       color: #202020;
       margin-left: 20px;
     }
-    h4 {
-      margin-left: 20px;
-      font-size: 4vw;
-      margin-top: 25px;
-    }
 
     .priceAndAddToCart {
       display: flex;
+      text-align: left;
+      h4 {
+        margin-left: 15px;
+        font-size: 3.5vw;
+        margin-top: 25px;
+      }
       button {
         display: block;
         text-align: center;
@@ -161,6 +162,7 @@ export const ProductsContainer = styled.li`
         transition: 0.2s;
         padding-bottom: 30px;
         padding-right: 33px;
+        margin-right: 20px;
 
         img {
           color: #f0f0f0;

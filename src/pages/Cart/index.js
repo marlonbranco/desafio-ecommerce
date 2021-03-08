@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { FiPlusSquare, FiMinusSquare, FiTrash } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import Header from "../../components/Header";
 import formatValue from "../../utils/formatValue";
@@ -58,6 +58,14 @@ const Cart = () => {
   }, 0);
 
   const finalPrice = cartSubTotal + shippingCost;
+
+  let history = useHistory();
+
+  const orderButton = () => {
+    setItems([]);
+    history.push("/");
+    alert("Pedido realizado com sucesso!");
+  };
 
   return (
     <>
@@ -124,7 +132,7 @@ const Cart = () => {
                 <h2 data-testid="final-price">{formatValue(finalPrice)}</h2>
               </span>
             </CheckoutContainer>
-            <CheckoutButton onClick={() => console.log(items)}>
+            <CheckoutButton onClick={orderButton}>
               Finalizar compra
             </CheckoutButton>
           </ul>
