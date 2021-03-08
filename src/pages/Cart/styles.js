@@ -33,7 +33,6 @@ const appearFromRight = keyframes`
 export const AnimationContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
 
   animation: ${appearFromRight} 1s;
@@ -53,7 +52,7 @@ export const ProductsContainer = styled.li`
   border: 2px blue;
   margin-bottom: 15px;
   max-width: 1140px;
-
+  min-width: 340px;
   span {
     display: flex;
     img {
@@ -104,55 +103,55 @@ export const ProductsContainer = styled.li`
       }
     }
   }
-  @media (max-width: 800px) {
+  @media (max-width: 600px) {
     flex-direction: column;
-
-    span {
+    position: relative;
+    .itemActions {
       display: flex;
+      justify-content: space-evenly;
+    }
+    span {
+      margin-bottom: 0px;
+      padding-bottom: 0px;
       img {
         padding: 20px;
         width: 10%;
         min-width: 160px;
       }
       h3 {
-        font-size: 20px;
-        padding-left: 50px;
+        margin-top: 30px;
+        font-size: 5vw;
+        padding-left: 0px;
+        padding-right: 20px;
       }
     }
     div {
-      padding: 20px;
+      padding-bottom: 20px;
       margin-right: 20px;
       text-align: right;
-      justify-content: space-between;
       h4 {
-        font-size: 17px;
+        font-size: 3vw;
         margin-top: 5px;
       }
       h2 {
-        font-size: 25px;
+        font-size: 5.5vw;
         margin-top: 10px;
       }
       span {
         display: flex;
         padding-top: 20px;
+        justify-content: space-between;
 
         h4 {
-          margin: 0px 5px;
-          font-size: 20px;
+          font-size: 5vwpx;
         }
         button {
-          border-radius: 50%;
-          border-style: none;
-          background-color: #fff;
-          transition: opacity 0.2s;
-
-          &:hover {
-            opacity: 0.7;
-          }
+          border-radius: 20px;
+          margin: 0px;
         }
 
         .remove {
-          margin-left: 30px;
+          margin-left: 70px;
         }
       }
     }
@@ -166,7 +165,7 @@ export const CheckoutContainer = styled.div`
   margin-bottom: 15px;
   max-width: 1140px;
   padding-left: 30px;
-
+  min-width: 340px;
   .checkoutDetails {
     margin: 30px;
     h3,

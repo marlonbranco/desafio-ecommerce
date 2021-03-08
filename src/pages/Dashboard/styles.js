@@ -5,7 +5,7 @@ export const Container = styled.div`
   max-width: 1120px;
   margin: 0px auto;
   padding: 40px 20px;
-
+  margin-top: 8vw;
   span {
     display: flex;
     justify-content: space-between;
@@ -23,11 +23,9 @@ const appearFromLeft = keyframes`
 `;
 
 export const AnimationContainer = styled.div`
+  margin-top: 7vw;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
   animation: ${appearFromLeft} 1s;
 `;
 export const Title = styled.h1`
@@ -61,19 +59,17 @@ export const Select = styled.div`
 `;
 
 export const ProductsContainer = styled.li`
-  display: inline-table;
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  text-align: left;
   background-color: #fff;
   border-radius: 5px;
   border: 2px blue;
   margin-top: 20px;
   margin-left: 12px;
-  margin-bottom: 30px;
-  height: 350px;
   max-width: 250px;
 
-  &:hover {
-    border: 5px;
-  }
   img {
     border-radius: 5px;
     width: 90%;
@@ -81,7 +77,7 @@ export const ProductsContainer = styled.li`
     margin-left: 10px;
   }
 
-  h4 {
+  h5 {
     font-size: 14px;
     margin: 16px;
     color: #202020;
@@ -91,13 +87,12 @@ export const ProductsContainer = styled.li`
     color: #202020;
     margin-left: 20px;
   }
-  p {
+  h4 {
     margin-top: 14px;
     margin-bottom: 14px;
-    strong {
-      font-size: 28px;
-      color: #202020;
-    }
+    margin-left: 20px;
+    font-size: 28px;
+    color: #202020;
   }
   button {
     text-align: center;
@@ -120,6 +115,60 @@ export const ProductsContainer = styled.li`
 
     &:hover {
       background-color: #b930d6;
+    }
+  }
+  @media (max-width: 600px) {
+    flex-direction: column;
+    position: relative;
+    text-align: left;
+    max-width: 150px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    min-height: 290px;
+    align-content: space-around;
+    justify-content: space-between;
+    img {
+      width: 80%;
+      padding: 0px;
+      margin: 12px;
+      margin-top: 20px;
+    }
+    h5 {
+      font-size: 3vw;
+      color: #202020;
+    }
+    p {
+      font-size: 2.5vw;
+      color: #202020;
+      margin-left: 20px;
+    }
+    h4 {
+      margin-left: 20px;
+      font-size: 4vw;
+      margin-top: 25px;
+    }
+
+    .priceAndAddToCart {
+      display: flex;
+      button {
+        display: block;
+        text-align: center;
+        width: 30px;
+        height: 30px;
+        font-size: 0;
+        color: #e1e1e1;
+        border: none;
+        transition: 0.2s;
+        padding-bottom: 30px;
+        padding-right: 33px;
+
+        img {
+          color: #f0f0f0;
+          width: 6vw;
+          padding: 0px;
+          margin: 0px;
+        }
+      }
     }
   }
 `;

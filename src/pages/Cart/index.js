@@ -78,7 +78,7 @@ const Cart = () => {
                     {`${item.quantity}x `}
                     {formatValue(item.price)}
                   </h4>
-                  <span>
+                  <span className="itemActions">
                     <button type="button" onClick={() => handleDecrement(item)}>
                       <FiMinusSquare size={25} />
                     </button>

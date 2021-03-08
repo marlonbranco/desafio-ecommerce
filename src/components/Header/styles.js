@@ -3,9 +3,11 @@ import styled from "styled-components";
 export const Container = styled.div`
   background: #202020;
   padding: 10px 0;
-
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
   header {
-    width: 100%;
     max-width: 1120px;
     margin: 0 auto;
     padding: 0 20px;
@@ -24,7 +26,7 @@ export const Container = styled.div`
     h1 {
       color: #f5f5f5;
       text-decoration: none;
-      font-size: 5vw;
+      font-size: 3.5vw;
       transition: 0.8s;
       margin-left: 20px;
     }
@@ -41,6 +43,20 @@ export const Container = styled.div`
         &:hover {
           opacity: 0.6;
         }
+      }
+    }
+    @media (max-width: 600px) {
+      .logo {
+        width: 100%;
+      }
+      .pageTitle {
+        font-size: 4.5vw;
+      }
+      .cartNav {
+        margin-right: 0px;
+      }
+      .cartIcon {
+        width: 25px;
       }
     }
   }

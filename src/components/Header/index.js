@@ -9,12 +9,12 @@ const Header = () => (
   <Container>
     <header>
       <Link to="/">
-        <img src={Logo} alt="AGameShop" />
+        <img src={Logo} className="logo" alt="AGameShop" />
       </Link>
-      <h1>AGameShop</h1>
-      <nav>
+      <h1 className="pageTitle">AGameShop</h1>
+      <nav className="cartNav">
         <Link to="/cart">
-          <FiShoppingCart size={35} />
+          <FiShoppingCart size={35} className="cartIcon" />
         </Link>
       </nav>
     </header>
