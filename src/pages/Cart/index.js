@@ -62,9 +62,14 @@ const Cart = () => {
   let history = useHistory();
 
   const orderButton = () => {
-    setItems([]);
-    history.push("/");
-    alert("Pedido realizado com sucesso!");
+    if (totalItensInCart === 0) {
+      history.push("/");
+      alert("Seu carrinho está vazio!");
+    } else {
+      setItems([]);
+      history.push("/");
+      alert("Pedido realizado com sucesso!");
+    }
   };
 
   return (

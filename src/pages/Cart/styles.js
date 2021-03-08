@@ -5,7 +5,7 @@ export const CartContainer = styled.div`
   max-width: 1120px;
   margin: 0px auto;
   padding: 40px 20px;
-
+  margin-top: 80px;
   .goToDashboard {
     text-align: center;
     width: 100%;

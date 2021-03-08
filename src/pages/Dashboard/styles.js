@@ -5,7 +5,7 @@ export const Container = styled.div`
   max-width: 1120px;
   margin: 0px auto;
   padding: 40px 20px;
-  margin-top: 8vw;
+  margin-top: 80px;
   span {
     display: flex;
     justify-content: space-between;
@@ -23,7 +23,6 @@ const appearFromLeft = keyframes`
 `;
 
 export const AnimationContainer = styled.div`
-  margin-top: 7vw;
   display: flex;
   flex-direction: column;
   animation: ${appearFromLeft} 1s;
@@ -123,7 +122,6 @@ export const ProductsContainer = styled.li`
     text-align: left;
     max-width: 140px;
     margin-bottom: 10px;
-    margin-top: 10px;
     min-height: 290px;
     align-content: space-around;
     justify-content: space-between;
